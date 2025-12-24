@@ -59,12 +59,30 @@
   #table td {
    padding: 5px;
   }
+  #topBar{
+   width:100vw;
+   height:25px;
+   border-radius:3px;
+   position:relative;
+  }
+  #menuBtn{
+   width:30px;
+   height:23px;
+   position:absolute;
+   right:5px;
+  }
  </style>
 </head>
 
 
 <body>
- <div class="text">hey</div>
+ <div id="topBar">
+  <div id="menuBtn">
+   <span class="menuBtnStrip"></span>
+   <span class="menuBtnStrip"></span>
+   <span class="menuBtnStrip"></span>
+  </div>
+ </div>
  <div class="container">
   <div class="row">
    <input class="Task" type="text" id="task" placeholder="Task" />
