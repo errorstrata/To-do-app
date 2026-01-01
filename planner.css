@@ -5,8 +5,6 @@
 
 #table {
   border-collapse: collapse;
-  margin: 30px auto;
-  align-self: center;
 }
 
 #table td {
@@ -14,7 +12,7 @@
 }
 
 #main{
-    width: 100%;
+    width: 99%;
     height: 100vh;
     margin-inline: 5px;
     display: grid;
@@ -23,16 +21,14 @@
 }
 #topBar{
     grid-area: topbar;
-    border: 1px solid;
-    height: 80px;
+    height: 40px;
     width: 100%;
+    border: 1px solid;
     margin-inline: 2px;
-    position: relative;
 }
 .container{
     grid-area: container;
     border: 1px solid;
     width: 90vh;
     height: auto;
-    margin-inline: auto;
 }
