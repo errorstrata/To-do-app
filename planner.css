@@ -1,0 +1,38 @@
+* {
+  font-family: Courier New;
+  margin: 0;
+}
+
+#table {
+  border-collapse: collapse;
+  margin: 30px auto;
+  align-self: center;
+}
+
+#table td {
+  padding: 5px;
+}
+
+#main{
+    width: 100%;
+    height: 100vh;
+    margin-inline: 5px;
+    display: grid;
+    grid-template-areas: "topbar" "container";
+    border: 1px solid blue;
+}
+#topBar{
+    grid-area: topbar;
+    border: 1px solid;
+    height: 80px;
+    width: 100%;
+    margin-inline: 2px;
+    position: relative;
+}
+.container{
+    grid-area: container;
+    border: 1px solid;
+    width: 90vh;
+    height: auto;
+    margin-inline: auto;
+}
