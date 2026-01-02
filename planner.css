@@ -1,6 +1,7 @@
 * {
   font-family: Courier New;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
 }
 
 #table {
@@ -10,25 +11,30 @@
 #table td {
   padding: 5px;
 }
-
-#main{
-    width: 99%;
-    height: 100vh;
-    margin-inline: 5px;
-    display: grid;
-    grid-template-areas: "topbar" "container";
-    border: 1px solid blue;
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+#container{
+  width: 99vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "topbar" "container";
+  border: 1px solid blue;
 }
 #topBar{
-    grid-area: topbar;
-    height: 40px;
-    width: 100%;
-    border: 1px solid;
-    margin-inline: 2px;
+  grid-area: topbar;
+  height: 40px;
+  margin: 5px 5px;
+  border: 1px solid;
 }
 .container{
-    grid-area: container;
-    border: 1px solid;
-    width: 90vh;
-    height: auto;
+  grid-area: container;
+  border: 1px solid;
+  height: auto;
+  margin: 5px 5px;
 }
