@@ -11,11 +11,11 @@ function rendertodoList() {
     const checked = todo.completed ? 'checked': '';
     const html = `
     <tr>
-    <td><input type="checkbox" ${checked} onchange="toggleCompleted(${index})" id="completed" /></td>
-    <td> ${todo.task} </td>
-    <td> ${todo.time} </td>
-    <td " onclick="deleteTask(${index})
-    rendertodoList()
+    <td class="check"><input type="checkbox" ${checked} onchange="toggleCompleted(${index})" id="completed" /></td>
+    <td class="task"> ${todo.task} </td>
+    <td class="time"> ${todo.time} </td>
+    <td class="deletebtn" onclick="deleteTask(${index});
+    rendertodoList();
     " id="deletebtn">&times</td>
     </tr>
     `;

@@ -5,11 +5,22 @@
 }
 
 #table {
+  width: 70%;
+  height: auto;
   border-collapse: collapse;
 }
 
 #table td {
   padding: 5px;
+}
+.deletebtn,
+.check{
+  text-align: center;
+  width: 10px;
+}
+.time{
+  text-align: center;
+  width: 150px;
 }
 body{
   display: flex;
@@ -21,20 +32,28 @@ body{
 #container{
   width: 99vw;
   height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "topbar" "container";
+  padding-inline: 5px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   border: 1px solid blue;
 }
 #topBar{
-  grid-area: topbar;
-  height: 40px;
-  margin: 5px 5px;
+  width: 100%;
+  height: 50px;
+  margin:5px 0px;
   border: 1px solid;
 }
 .container{
-  grid-area: container;
+  width: 100%;
+  flex-grow: 1;
   border: 1px solid;
-  height: auto;
-  margin: 5px 5px;
+  height: inherit;
+  margin: 5px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
 }
