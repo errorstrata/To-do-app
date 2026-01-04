@@ -20,7 +20,7 @@
 }
 .time{
   text-align: center;
-  width: 150px;
+  max-width: 100px;
 }
 body{
   display: flex;
