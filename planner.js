@@ -34,6 +34,15 @@ function add() {
   console.log(task);
 
   if (task && time) {
+    fetch('http://127.0.0.1:5000/tasks', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ task: task, date: time })
+    } 
+      )
     let todoList = JSON.parse(localStorage.getItem('cart')) || [];
 
     todoList.push({
