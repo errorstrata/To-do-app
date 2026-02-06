@@ -1,76 +1,25 @@
-let call = document.getElementById('commit');
-call.addEventListener('click', add);
+const send = document.getElementById('submit')
 
-window.addEventListener('load', rendertodoList);
+send.addEventListener('click', sendData)
+function sendData() {
+    const task = document.getElementById('task').value
+    const date = document.getElementById('date').value
 
-function rendertodoList() {
-  let todoList = JSON.parse(localStorage.getItem('cart')) || [];
-  let todoListHTML = '';
+    let data = {
+      'task': task,
+      'date': date
+    }
 
-  todoList.forEach(function(todo, index) {
-    const checked = todo.completed ? 'checked': '';
-    const html = `
-    <tr>
-    <td class="check"><input type="checkbox" ${checked} onchange="toggleCompleted(${index})" id="completed" /></td>
-    <td class="task"> ${todo.task} </td>
-    <td class="time"> ${todo.time} </td>
-    <td class="deletebtn" onclick="deleteTask(${index});
-    rendertodoList();
-    " id="deletebtn">&times</td>
-    </tr>
-    `;
-
-    todoListHTML += html;
-  });
-
-  document.getElementById('data')
-    .innerHTML = todoListHTML;
-};
-
-function add() {
-  let task = document.getElementById('task').value;
-  let time = document.getElementById('time').value;
-
-  console.log(task);
-
-  if (task && time) {
-    fetch('http://127.0.0.1:5000/tasks', {
-      method: 'POST',
-      headers: {
-        'Authorization': 'Bearer ' + token,
-        'Content-Type': 'application/json'
+    fetch('http://127.0.0.1:5000/task', {
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
       },
-      body: JSON.stringify({ task: task, date: time })
-    } 
-      )
-    let todoList = JSON.parse(localStorage.getItem('cart')) || [];
-
-    todoList.push({
-      task,
-      time,
-      completed: false
-    });
-
-    localStorage.setItem('cart', JSON.stringify(todoList));
-
-    document.getElementById('task').value = '';
-    document.getElementById('time').value = '';
-
-    rendertodoList();
-  } else {
-    alert('enter both Task and time');
-  }
-}
-
-function toggleCompleted(index) {
-  let todoList = JSON.parse(localStorage.getItem('cart')) || [];
-  todoList[index].completed = !todoList[index].completed;
-  localStorage.setItem('cart', JSON.stringify(todoList));
-}
-
-function deleteTask(index) {
-  let todoList = JSON.parse(localStorage.getItem('cart')) || [];
-  todoList.splice(index, 1);
-  localStorage.setItem('cart', JSON.stringify(todoList));
-  rendertodoList();
+      body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+    })
+    .catch(err => console.log(err))
 }
