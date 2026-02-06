@@ -1,4 +1,4 @@
-const send = document.getElementById('submit')
+const send = document.getElementById('commit')
 
 send.addEventListener('click', sendData)
 function sendData() {
