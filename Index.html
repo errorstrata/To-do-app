@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Daily Planer</title>
-  <link rel="icon" href="fav.png" type="image/png">
+  <link rel="shortcut icon" href="fav.png" type="image/png">
   <link rel="stylesheet" href="planner.css">
 </head>
 <body>
@@ -31,23 +31,13 @@
         <input class="Time" type="time" id="time" placeholder="mm/dd/yyyy" />
         <button class="add" id="commit">Add Task</button>
       </div>
-      <table id="table" border="1">
-        <thead>
-          <tr>
-            <td>DONE</td>
-            <td>TASK</td>
-            <td>TIME</td>
-            <td>DEL-EVENT</td>
-          </tr>
-        </thead>
-        <tbody id="data">
-        </tbody>
-      </table>
+      <div id="data">
+
+      </div>
     </div>
 
   </main>
 
   <script src="planner.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

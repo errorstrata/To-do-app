@@ -45,24 +45,27 @@ body{
   gap: 20px;
 }
 
-#table {
-  width: 70%;
-  height: auto;
-  border-collapse: collapse;
+#data{
+  width: 650px;
+  border: 2px solid;
+  border-radius: 15px;
+  box-shadow: 10px 5px 5px red;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+}
+#data .card{
+  width: 550px;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid;
+  border-radius: 10px;
 }
 
-#table td {
-  padding: 5px;
-}
-.deletebtn,
-.check{
-  text-align: center;
-  width: 10px;
-}
-.time{
-  text-align: center;
-  max-width: 100px;
-}
 .inputEvent{
   width: 50%;
   height: 200px;
